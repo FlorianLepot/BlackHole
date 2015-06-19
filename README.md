@@ -67,6 +67,10 @@ If you want to connect to databases, you must install the command line clients
 Create the database and set the configuration file
 
 ```Bash
+mv /opt/BlackHole/blackhole/settings_dev.py /opt/BlackHole/blackhole/settings.py
+```
+
+```Bash
 vi /opt/BlackHole/blackhole/settings.py
 ```
 

@@ -3,3 +3,4 @@
 db.sqlite3
 Vagrantfile
 .vagrant
+Blackhole/blackhole/settings.py
