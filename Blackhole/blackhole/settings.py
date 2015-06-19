@@ -60,13 +60,21 @@ WSGI_APPLICATION = 'blackhole.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+#Mysql Example
+# DATABASES = {
+#     'default': {
+#          'ENGINE': 'django.db.backends.mysql',
+#          'NAME': 'XXXX',
+#          'USER': 'XXXX',
+#          'PASSWORD': 'XXXX'
+#       }
+# }
+
 DATABASES = {
     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'XXXX',
-         'USER': 'XXXX',
-         'PASSWORD': 'XXXX'
-      }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 
