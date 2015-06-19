@@ -31,8 +31,8 @@
                     <tr>
                         <td>{{ object.description }}</td>
                         <td>
-                            <button class="btn btn-danger btn-xs" onclick="showModalDialog('{% url 'environment_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                             <a class="btn btn-xs btn-success" href="{% url 'environment_update' object.id %}"><i class="fa fa-edit fa-fw"></i></a>
+                            <button class="btn btn-danger btn-xs" onclick="showModalDialog('{% url 'environment_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                         </td>
                     </tr>
                 {% endfor %}

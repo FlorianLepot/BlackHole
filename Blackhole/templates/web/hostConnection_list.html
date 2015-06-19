@@ -35,8 +35,8 @@
                         <td>{{ object.host.name }}</td>
                         <td>{{ object.get_authentication_method_display }}</td>
                         <td>
-                            <button class="btn btn-xs btn-danger" onclick="showModalDialog('{% url 'hostConnection_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                             <a class="btn btn-xs btn-success" href="{% url 'hostConnection_update' object.id %}"><i class="fa fa-edit fa-fw"></i></a>
+                            <button class="btn btn-xs btn-danger" onclick="showModalDialog('{% url 'hostConnection_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                         </td>
                     </tr>
                 {% endfor %}

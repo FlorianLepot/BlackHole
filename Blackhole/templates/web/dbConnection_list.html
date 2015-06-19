@@ -36,8 +36,8 @@
                         <td>{{ object.host.name }}</td>
                         <td>{{ object.host.ip }}</td>
                         <td>
-                            <button class="btn btn-danger btn-xs" onclick="showModalDialog('{% url 'dbConnection_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                             <a class="btn btn-success btn-xs" href="{% url 'dbConnection_update' object.id %}"><i class="fa fa-edit fa-fw"></i></a>
+                            <button class="btn btn-danger btn-xs" onclick="showModalDialog('{% url 'dbConnection_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                         </td>
                     </tr>
                 {% endfor %}
