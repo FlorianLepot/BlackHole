@@ -41,7 +41,7 @@ Here you can see it in action
 Create the group
 
 ```Bash
-group add backhole
+groupadd blackhole
 ```
 
 Copy to the destination folder, for this example is /opt
