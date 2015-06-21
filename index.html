@@ -69,7 +69,7 @@ Also it stores in a database all the information about all the connections estab
 
 <p>Create the group</p>
 
-<div class="highlight highlight-Bash"><pre>group add backhole</pre></div>
+<div class="highlight highlight-Bash"><pre>groupadd backhole</pre></div>
 
 <p>Copy to the destination folder, for this example is /opt</p>
 
@@ -88,6 +88,7 @@ Also it stores in a database all the information about all the connections estab
 
 <p>Create the database and set the configuration file</p>
 
+<div class="highlight highlight-Bash"><pre><code>mv /opt/BlackHole/blackhole/settings_dev.py /opt/BlackHole/blackhole/settings.py</code></pre></div>
 <div class="highlight highlight-Bash"><pre><code>vi /opt/BlackHole/blackhole/settings.py</code></pre></div>
 
 <pre><code>DATABASES = {
@@ -129,6 +130,15 @@ Also Disable port forwarding in the sshd configuration</p>
 <p>Here you can see how to setup BlackHole</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/trjYvbQE1vY" frameborder="0" allowfullscreen></iframe></a>
 
+<br>
+<p>Supported DB Engines: (You must have the command line clients installed)</p>
+
+<ul>
+<li>Oracle</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+</ul>
+<br>
 <h3>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
 
