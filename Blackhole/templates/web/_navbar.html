@@ -18,6 +18,7 @@
                         <strong>{% trans 'Welcome' %}, {{ user }} </strong><i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
+                        <li><a href="{% url 'django.contrib.auth.views.password_change' %}"><i class="fa fa-cog fa-fw"></i> Change Password</a>
                         <li><a href="{% url 'django.contrib.auth.views.logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
