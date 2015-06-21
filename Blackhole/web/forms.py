@@ -38,6 +38,7 @@ class HostConnectionForm(forms.ModelForm):
             'password': forms.PasswordInput()
         }
 
+
 class DBConnectionForm(forms.ModelForm):
 
     class Meta:

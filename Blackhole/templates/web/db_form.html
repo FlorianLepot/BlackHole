@@ -4,20 +4,40 @@
 {% block title %}{% trans 'Create' %} {% trans 'database' %}{% endblock %}
 
 {% block main_content %}
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">{% trans 'Create' %} {% trans 'database' %}</h1>
-                </div>
-            <div class="col-lg-5">
-                <form action="" method="post" class="form">
-                    {% csrf_token %}
-                    {% bootstrap_form form %}
-                    {% buttons %}
-                        <button type="submit" class="btn btn-primary">
-                            {% bootstrap_icon "ok-circle" %} {% trans 'Create' %}
-                        </button>
-                    {% endbuttons %}
-                </form>
-            </div>
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{% trans 'Create' %} {% trans 'database' %}</h1>
+        </div>
+        <div class="col-lg-5">
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                        {% bootstrap_icon "ok-circle" %} {% trans 'Create' %}
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        $('#id_engine').change(function(){
+            var selected = $('#id_engine option:selected').text();
+            switch (selected){
+                case 'Oracle':
+                    $('#id_port').val(1521);
+                    break;
+                case 'MySQL':
+                    $('#id_port').val(3306);
+                    break;
+                case 'PostgreSQL':
+                    $('#id_port').val(5432);
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
 {% endblock %}

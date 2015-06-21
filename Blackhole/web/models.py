@@ -57,8 +57,10 @@ class Database(models.Model):
     CONNECTION_TYPE = CONNECTION_TYPE_DB
     ENGINE_MYSQL = u'MYSQL'
     ENGINE_ORACLE = u'ORACLE'
+    ENGINE_POSTGRES = u'POSTGRES'
     ENGINE_CHOICES = ((ENGINE_ORACLE, u'Oracle'),
-                      (ENGINE_MYSQL, u'MySQL'))
+                      (ENGINE_MYSQL, u'MySQL'),
+                      (ENGINE_POSTGRES, u'PostgreSQL'))
     name = models.CharField(max_length=30, verbose_name=_(u"Name"))
     ip = models.IPAddressField(verbose_name=_(u"IP Address"))
     port = models.PositiveIntegerField(max_length=5, default=1521, verbose_name=_(u"Port"))
@@ -176,6 +178,10 @@ class DBConnection(models.Model):
             return u"{0} -u {1} -p{2} -D {3} -h {4} -P {5}".format(settings.MYSQL_CLIENT, self.get_connection_user(user), self.password, self.host.name, self.host.ip, self.host.port)
         elif self.host.engine == Database.ENGINE_ORACLE:
             return u"{0} {1}/{2}@//{3}:{4}/{5}".format(settings.ORACLE_CLIENT, self.get_connection_user(user), self.password, self.host.ip, self.host.port, self.host.name)
+        elif self.host.engine == Database.ENGINE_POSTGRES:
+            os.environ['PGPASSWORD'] = self.password
+            return u"{0} -U {1} -h {2} -p {3} -d {4}".format(settings.POSTGRES_CLIENT, self.get_connection_user(user),
+                                                                                        self.host.ip, self.host.port, self.host.name)
         else:
             return ""
 
@@ -203,7 +209,6 @@ class Profile(models.Model):
 
     def get_hostsConnections(self, environment):
         return list(chain(self.hosts.filter(host__environment=environment).order_by('host__name'), self.databases.filter(host__environment=environment).order_by('host__name')))
-
 
     def __unicode__(self):
         return u"%s" % self.name

@@ -102,5 +102,6 @@ log_level = logging.INFO
 # Database
 MYSQL_CLIENT = "/usr/bin/mysql"
 ORACLE_CLIENT = "/usr/bin/sqlplus64"
+POSTGRES_CLIENT = "/usr/bin/psql"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)

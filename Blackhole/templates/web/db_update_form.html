@@ -23,3 +23,23 @@
             </div>
             </div>
 {% endblock %}
+{% block extra_js %}
+    <script>
+        $('#id_engine').change(function(){
+            var selected = $('#id_engine option:selected').text();
+            switch (selected){
+                case 'Oracle':
+                    $('#id_port').val(1521);
+                    break;
+                case 'MySQL':
+                    $('#id_port').val(3306);
+                    break;
+                case 'PostgreSQL':
+                    $('#id_port').val(5432);
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
+{% endblock %}
