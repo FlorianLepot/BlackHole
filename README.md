@@ -123,7 +123,7 @@ Here you can see how to setup BlackHole
 Supported DB Engines: (You must have the command line clients installed)
 - Oracle
 - MySQL
--PostgreSQL
+- PostgreSQL
     
 ### Requirements
 
