@@ -120,6 +120,11 @@ Also Disable port forwarding in the sshd configuration
 Here you can see how to setup BlackHole
 [![BlackHole - Setup](https://i1.ytimg.com/vi/trjYvbQE1vY/hqdefault.jpg)](http://www.youtube.com/watch?v=trjYvbQE1vY)
 
+Supported DB Engines: (You must have the command line clients installed)
+- Oracle
+- MySQL
+-PostgreSQL
+    
 ### Requirements
 
 Software:
