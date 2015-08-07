@@ -16,6 +16,7 @@
             return $("<a>").append(icon).addClass("btn btn-small pull-right");
         };
             $(':input[name=target_0]').bind('djselectableselect', function(event, ui) {
+                showLoader();
                 update_url = $("#update-data").data("update-url") + $('#id_target_1').val();
                 $(location).attr('href', update_url);
             });
