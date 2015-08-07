@@ -43,7 +43,7 @@
                         <td>{{ object.profile }}</td>
                         <td>{% if object.enabled %}<i class="fa fa-check fa-fw">{% else %}<i class="fa fa-times fa-fw">{% endif %}</td>
                         <td>
-                            <a class="btn btn-success btn-xs" href="{% url 'app_user_update' object.id %}"><i class="fa fa-edit fa-fw"></i></a>
+                            <a class="btn btn-success btn-xs" href="{% url 'app_user_update' object.id %}" onclick="showLoader()"><i class="fa fa-edit fa-fw"></i></a>
                         </td>
                     </tr>
                 {% endfor %}

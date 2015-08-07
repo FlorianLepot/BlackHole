@@ -35,7 +35,7 @@
                         <td>{{ object.key_type }}</td>
                         <td>{{ object.environment }}</td>
                         <td>
-                            <a class="btn btn-xs btn-success" href="{% url 'privatekey_update' object.id %}"><i class="fa fa-edit fa-fw"></i></a>
+                            <a class="btn btn-xs btn-success" href="{% url 'privatekey_update' object.id %}" onclick="showLoader()"><i class="fa fa-edit fa-fw"></i></a>
                             <button class="btn btn-xs btn-danger" onclick="showModalDialog('{% url 'privatekey_delete' object.id %}')"><i class="fa fa-trash-o fa-fw"></i></button>
                         </td>
                     </tr>

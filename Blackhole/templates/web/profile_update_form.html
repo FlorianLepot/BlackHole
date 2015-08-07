@@ -25,7 +25,7 @@
                     {% csrf_token %}
                     {% bootstrap_form form %}
                     {% buttons %}
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn btn-success" onclick="showLoader()">
                             {% bootstrap_icon "ok-circle" %} {% trans 'Update' %}
                         </button>
                         <a href="{% url 'profile_list' %}" class="btn btn-primary">{% bootstrap_icon "remove-circle" %} {% trans 'Cancel' %}</a>
