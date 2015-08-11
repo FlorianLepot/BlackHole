@@ -17,6 +17,10 @@ CONNECTION_TYPE_DB = 'DB'
 
 logger = logging.getLogger("blackhole.models")
 
+def no_white_space_validator(value):
+    if " " in value:
+        raise ValidationError(u'White spaces not allowed')
+
 
 class Environment(models.Model):
     name = models.CharField(max_length=15, unique=True, verbose_name=_(u"Name"))
@@ -37,7 +41,7 @@ class Host(models.Model):
                   ('SOLARIS', 'Solaris'),
                   ('OSX', 'Mac OSX'))
     
-    name = models.CharField(max_length=30, unique=True, verbose_name=_(u"Name"))
+    name = models.CharField(max_length=30, unique=True, verbose_name=_(u"Name"), validators=[no_white_space_validator])
     ip = models.IPAddressField(verbose_name=_(u"IP Address"), unique=True)
     port = models.PositiveIntegerField(max_length=5, default=22, verbose_name=_(u"Port"))
     os = models.CharField(max_length=10, choices=OS_CHOICES, default=0, verbose_name=_(u"Operating System"))
@@ -61,7 +65,7 @@ class Database(models.Model):
     ENGINE_CHOICES = ((ENGINE_ORACLE, u'Oracle'),
                       (ENGINE_MYSQL, u'MySQL'),
                       (ENGINE_POSTGRES, u'PostgreSQL'))
-    name = models.CharField(max_length=30, verbose_name=_(u"Name"))
+    name = models.CharField(max_length=30, verbose_name=_(u"Name"), validators=[no_white_space_validator])
     ip = models.IPAddressField(verbose_name=_(u"IP Address"))
     port = models.PositiveIntegerField(max_length=5, default=1521, verbose_name=_(u"Port"))
     engine = models.CharField(max_length=10, choices=ENGINE_CHOICES, default=0, verbose_name=_(u"Engine"))
