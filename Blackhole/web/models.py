@@ -67,7 +67,7 @@ class Database(models.Model):
                       (ENGINE_POSTGRES, u'PostgreSQL'))
     name = models.CharField(max_length=30, verbose_name=_(u"Name"), validators=[no_white_space_validator])
     ip = models.IPAddressField(verbose_name=_(u"IP Address"))
-    port = models.PositiveIntegerField(max_length=5, default=1521, verbose_name=_(u"Port"))
+    port = models.PositiveIntegerField(max_length=5, default=3306, verbose_name=_(u"Port"))
     engine = models.CharField(max_length=10, choices=ENGINE_CHOICES, default=ENGINE_MYSQL, verbose_name=_(u"Engine"))
     description = models.CharField(max_length=50, blank=True, null=True, verbose_name=_(u"Description"))
     environment = models.ForeignKey(Environment, verbose_name=_(u"Environment"))
