@@ -38,7 +38,7 @@
                     <tr>
                         <td>{{ object.name }}</td>
                         <td>{{ object.ip }}</td>
-                        <td>{{ object.os }}</td>
+                        <td>{{ object.get_os_display }}</td>
                         <td>{{ object.environment }}</td>
                         <td>
                             <a class="btn btn-xs btn-success btn-xs" href="{% url 'host_update' object.id %}" onclick="showLoader()"><i class="fa fa-edit fa-fw"></i></a>
