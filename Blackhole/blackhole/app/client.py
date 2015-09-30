@@ -45,6 +45,7 @@ class SecureShellClient(Client):
 
     def start_session_using_pk(self, user, private_key):
         logger.debug(u"Validating with Private Key")
+        transport = None
         try:
             transport = self.get_transport()
             transport.auth_publickey(user, private_key)
